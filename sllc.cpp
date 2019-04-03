@@ -87,4 +87,11 @@ void display_list()
   }
   
 } 
-
+//Hapus data depan
+void hapus_depan_sllc()
+{
+  sllc *temp;
+  temp = depan_ptr;
+  depan_ptr = depan_ptr->next;
+  delete temp;
+} 
