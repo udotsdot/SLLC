@@ -122,3 +122,34 @@ void hapus_belakang_sllc()
 
    }
 } 
+//Tambah data sisip
+void tambah_data_yang_akan_disisipkan_list()
+{
+  sllc *baru, *bantu;
+  int posisi_sisip;
+  if(depan_ptr != NULL)
+  {
+  
+   
+    cout<<"Akan disisip setelah Data Ke ? : ";
+    cin>>posisi_sisip;
+    baru =new sllc;
+   bantu=depan_ptr;
+     
+    for(int i=1;i<posisi_sisip-1;i++) {
+      if(bantu->next != NULL)
+        bantu=bantu->next;
+      else
+        break; 
+    }
+  cout << "Masukkan Data     : ";
+  cin >> baru->urut;
+  baru->next=bantu->next;
+  bantu->next=baru;
+  }
+  else
+  {
+    cout<<"Maaf data anda belum ada ! silahkan isi data terlebih dulu....";
+    getch();
+  } 
+}
