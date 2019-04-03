@@ -61,3 +61,30 @@ void tambah_data_sllc_di_belakang()
   temp2->next = temp;
   }
 } 
+// Menampilkan list
+void display_list()
+{
+  sllc *temp;
+  temp = depan_ptr;
+  cout << endl;
+  cout << "DATA [";  
+  if (temp == NULL)
+    cout << "Data kosong!]" << endl;
+  else
+  {
+    while (temp != NULL)
+    {  
+     
+     cout << "" << temp->urut << ",";
+     
+     if (temp == posisi)
+        cout << "";
+
+     temp = temp->next; 
+    }
+    cout << "] ";  
+    cout << "" << endl;
+  }
+  
+} 
+
