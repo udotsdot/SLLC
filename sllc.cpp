@@ -153,3 +153,59 @@ void tambah_data_yang_akan_disisipkan_list()
     getch();
   } 
 }
+//Hapus data sisip
+void Hapus_data_yang_telah_disisipkan_list()
+{
+  int banyakdata,posisi_hapus,poshapus;
+  sllc *hapus, *bantu;
+  if(depan_ptr != NULL)
+  {
+    cout<<"Data yang akan dihapus  : ";
+    cin>>posisi_hapus;
+    banyakdata=1;
+    bantu=depan_ptr;
+    while(bantu->next != NULL)
+    {
+      bantu=bantu->next;
+      banyakdata++;
+    }
+    if((posisi_hapus<1)||(posisi_hapus>banyakdata))
+    {
+      cout<<"Belum ada data !! masukkan Data dula aja...\n";
+    }
+    else
+    {
+      bantu=depan_ptr;
+      poshapus=1;
+      while(poshapus<(posisi_hapus-1))
+      {
+        bantu=bantu->next;
+        poshapus++;
+      }
+      hapus=bantu->next;
+      bantu->next=hapus->next;
+      delete hapus;
+    }
+ }
+ else 
+    cout<<"Maaf data anda belum ada !! silahkan isi data terlebih dulu... ";
+ getch();
+}
+ 
+
+int init(int nilai){
+ sllc *baru;
+  baru = new sllc;
+  baru->urut=nilai;
+  baru->next = NULL;
+  if(depan_ptr == NULL)
+  {
+    depan_ptr=baru;
+    depan_ptr->next = NULL;
+  }
+  else
+  {
+    baru->next = depan_ptr;
+    depan_ptr = baru;
+  }
+}
