@@ -209,3 +209,51 @@ int init(int nilai){
     depan_ptr = baru;
   }
 }
+int main()
+{
+  cout <<"Nama :\tJeremmy Hesa		1817051035"<<endl;
+  cout <<"\tM. Umaruddin Syam	1857051006"<<endl;
+  cout <<"\tVindo RizkiYanto	1817051059"<<endl;
+  cout <<"\tZia Danisvara Pakpahan	1817051067"<<endl;
+  cout <<endl<< "\t\tLINKED LIST" << endl;
+  depan_ptr = NULL;
+  
+  do
+  {
+    display_list();
+    cout << endl;
+    cout << "MENU PILIHAN : " << endl;
+    cout << "0. Keluar program." << endl;
+    cout << "1. Tambah data depan list." << endl;
+    cout << "2. Tambah data belakang list." << endl;
+    cout << "3. Hapus data depan list." << endl;
+    cout << "4. Hapus data belakang list." << endl;
+    cout << "5. Tambah data yang akan disisipkan list."<< endl;
+    cout << "6. Hapus data yang telah disisipkan  list." << endl;
+    cout << endl << "Pilihan : ";
+    cin >> option; 
+
+switch (option)
+  {
+  case 1 : tambah_data_depan_list(); 
+  system("CLS");
+    break;
+  case 2 : tambah_data_sllc_di_belakang();
+  system("CLS");
+    break;
+  case 3 : hapus_depan_sllc();
+  system("CLS");
+    break;
+  case 4 : hapus_belakang_sllc();
+  system("CLS");
+    break;
+  case 5 : tambah_data_yang_akan_disisipkan_list();
+  system("CLS");
+    break;
+  case 6 : Hapus_data_yang_telah_disisipkan_list();
+  system("CLS");
+   
+  }
+ }  
+while (option != 0); 
+}
