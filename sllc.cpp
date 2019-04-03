@@ -95,3 +95,30 @@ void hapus_depan_sllc()
   depan_ptr = depan_ptr->next;
   delete temp;
 } 
+//Hapus data belakang
+void hapus_belakang_sllc()
+{
+  sllc *temp1, *temp2;
+  if (depan_ptr == NULL)
+    cout << "Data kosong!" << endl;
+  else
+  {
+    temp1 = depan_ptr;
+    if (temp1->next == NULL)
+    {
+      delete temp1;
+      depan_ptr = NULL;
+    }
+    else 
+    {
+      while (temp1->next != NULL)
+      {
+        temp2 = temp1;
+        temp1 = temp1->next;
+      }
+      delete temp1;
+      temp2->next = NULL;
+    }
+
+   }
+} 
